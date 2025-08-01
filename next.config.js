@@ -2,8 +2,17 @@
 const nextConfig = {
   images: {
     domains: ['localhost'],
-    unoptimized: true
-  }
+    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
+  },
+  experimental: {
+    optimizePackageImports: ['lucide-react'],
+  },
 }
 
 module.exports = nextConfig 
