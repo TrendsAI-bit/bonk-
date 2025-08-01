@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
-import { Clock, Zap, Crown } from 'lucide-react'
+import { Clock, Zap, Crown, Wallet } from 'lucide-react'
 
 const MintSection = () => {
   const ref = useRef(null)
@@ -14,17 +14,18 @@ const MintSection = () => {
     minutes: 0,
     seconds: 0
   })
-  const [minted, setMinted] = useState(0)
+  const [isWalletConnected, setIsWalletConnected] = useState(false)
+  const [tokenBalance, setTokenBalance] = useState(0)
   const [isMinting, setIsMinting] = useState(false)
 
-  // Set launch date (example: 7 days from now)
-  const launchDate = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
-
+  // Countdown timer
   useEffect(() => {
+    const targetDate = new Date('2024-02-01T00:00:00Z').getTime()
+    
     const timer = setInterval(() => {
       const now = new Date().getTime()
-      const distance = launchDate.getTime() - now
-
+      const distance = targetDate - now
+      
       if (distance > 0) {
         setTimeLeft({
           days: Math.floor(distance / (1000 * 60 * 60 * 24)),
@@ -34,64 +35,70 @@ const MintSection = () => {
         })
       }
     }, 1000)
-
+    
     return () => clearInterval(timer)
-  }, [launchDate])
+  }, [])
 
-  const handleMint = async () => {
+  const mechanics = [
+    {
+      title: "Palace Reveals",
+      description: "Lore unlocks as holders rise in rank",
+      chinese: "宫",
+      color: "from-bonk-gold to-yellow-400"
+    },
+    {
+      title: "Scroll Drops",
+      description: "Airdropped treasures of prophecy and power",
+      chinese: "卷",
+      color: "from-bonk-purple to-purple-600"
+    },
+    {
+      title: "Bonkocracy",
+      description: "Holders vote on royal decrees",
+      chinese: "民",
+      color: "from-bonk-red to-red-600"
+    },
+    {
+      title: "Warrior Trials",
+      description: "Frog PvP coming soon... maybe",
+      chinese: "武",
+      color: "from-bonk-royal to-blue-600"
+    }
+  ]
+
+  const handleConnectWallet = () => {
+    // Simulate wallet connection
+    setIsWalletConnected(true)
+    setTokenBalance(7500000) // Simulate 7.5M token balance
+  }
+
+  const handleMint = () => {
+    if (!isWalletConnected) {
+      alert('Please connect your wallet first')
+      return
+    }
+    if (tokenBalance < 5000000) {
+      alert('You need at least 5,000,000 tokens to mint')
+      return
+    }
+    
     setIsMinting(true)
     // Simulate minting process
     setTimeout(() => {
-      setMinted(prev => prev + 1)
       setIsMinting(false)
+      alert('Minting successful! Welcome to the Dynasty.')
     }, 2000)
   }
-
-  const mintPrice = "0.1 SOL"
-  const maxSupply = 100
-
-  const mechanics = [
-    { 
-      title: "Palace Reveals", 
-      desc: "Lore unlocks as holders rise in rank", 
-      chinese: "宫殿揭示",
-      icon: "宫",
-      color: "from-bonk-gold to-yellow-400"
-    },
-    { 
-      title: "Scroll Drops", 
-      desc: "Airdropped treasures of prophecy and power", 
-      chinese: "卷轴掉落",
-      icon: "卷",
-      color: "from-bonk-red to-red-600"
-    },
-    { 
-      title: "Bonkocracy", 
-      desc: "Holders vote on royal decrees", 
-      chinese: "邦克民主",
-      icon: "民",
-      color: "from-bonk-purple to-purple-600"
-    },
-    { 
-      title: "Warrior Trials", 
-      desc: "Frog PvP coming soon... maybe", 
-      chinese: "武士试炼",
-      icon: "武",
-      color: "from-green-400 to-green-600"
-    }
-  ]
 
   return (
     <section
       id="mint"
       ref={ref}
-      className="min-h-screen bg-gradient-to-b from-black via-bonk-red/5 to-black py-24 relative overflow-hidden"
+      className="min-h-screen bg-gradient-to-b from-black via-bonk-dark to-black py-24 relative overflow-hidden"
     >
-      {/* Background ritual circles */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-20 w-64 h-64 border border-bonk-gold/20 rounded-full animate-spin" style={{ animationDuration: '20s' }}></div>
-        <div className="absolute bottom-20 right-20 w-48 h-48 border border-bonk-red/20 rounded-full animate-spin" style={{ animationDuration: '15s', animationDirection: 'reverse' }}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 border border-bonk-purple/20 rounded-full animate-pulse"></div>
+      {/* Background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 bg-bonk-gold/5"></div>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -105,187 +112,150 @@ const MintSection = () => {
             The Mint Ritual
           </h2>
           <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-            Only the chosen may mint. Only the brave may burn.
+            Only the chosen may mint. Only the brave may burn. Only 100 NFTs forged under the Red Moon of BONKZHAO shall ever exist.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Mint Info */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="space-y-8"
-          >
-            <div className="glass-effect rounded-3xl p-10 border border-white/10">
-              <h3 className="text-3xl font-bold text-bonk-gold imperial-text mb-8">
-                Mint Details
-              </h3>
-              
-              <div className="space-y-6">
-                <div className="flex justify-between items-center py-3 border-b border-white/10">
-                  <span className="text-white/80 font-medium">Price:</span>
-                  <span className="text-bonk-gold font-bold text-lg">{mintPrice}</span>
-                </div>
-                <div className="flex justify-between items-center py-3 border-b border-white/10">
-                  <span className="text-white/80 font-medium">Supply:</span>
-                  <span className="text-bonk-gold font-bold text-lg">{minted}/{maxSupply}</span>
-                </div>
-                <div className="flex justify-between items-center py-3 border-b border-white/10">
-                  <span className="text-white/80 font-medium">Network:</span>
-                  <span className="text-bonk-gold font-bold text-lg">Solana</span>
-                </div>
-                <div className="flex justify-between items-center py-3">
-                  <span className="text-white/80 font-medium">Max per wallet:</span>
-                  <span className="text-bonk-gold font-bold text-lg">5</span>
-                </div>
-              </div>
-
-              {/* Progress bar */}
-              <div className="mt-8">
-                <div className="flex justify-between text-sm text-white/60 mb-3">
-                  <span className="font-medium">Progress</span>
-                  <span className="font-medium">{Math.round((minted / maxSupply) * 100)}%</span>
-                </div>
-                <div className="w-full bg-white/10 rounded-full h-3 overflow-hidden">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    animate={{ width: `${(minted / maxSupply) * 100}%` }}
-                    className="bg-gradient-to-r from-bonk-gold to-bonk-red h-3 rounded-full"
-                  ></motion.div>
-                </div>
-              </div>
-            </div>
-
-            {/* Ritual Info */}
-            <div className="glass-effect rounded-3xl p-10 border border-white/10">
-              <h3 className="text-2xl font-bold text-bonk-gold imperial-text mb-6">
-                The Sacred Process
-              </h3>
-              <p className="text-white/80 text-lg leading-relaxed">
-                Only 100 NFTs forged under the Red Moon of BONKZHAO shall ever exist. 
-                Each mint is a sacred ritual, connecting you to the ancient memeverse 
-                and granting you a unique position in the Bonk Dynasty.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Countdown and Mint Button */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-            className="space-y-8"
-          >
-            {/* Countdown */}
-            <div className="glass-effect rounded-3xl p-10 border border-white/10 text-center">
-              <div className="flex items-center justify-center mb-8">
-                <Clock className="text-bonk-gold mr-3" size={28} />
-                <h3 className="text-2xl font-bold text-bonk-gold imperial-text">
-                  Launch Countdown
-                </h3>
-              </div>
-              
-              <div className="grid grid-cols-4 gap-6">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-bonk-gold mb-2">{timeLeft.days}</div>
-                  <div className="text-white/60 text-sm font-medium">Days</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-bonk-gold mb-2">{timeLeft.hours}</div>
-                  <div className="text-white/60 text-sm font-medium">Hours</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-bonk-gold mb-2">{timeLeft.minutes}</div>
-                  <div className="text-white/60 text-sm font-medium">Minutes</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-bonk-gold mb-2">{timeLeft.seconds}</div>
-                  <div className="text-white/60 text-sm font-medium">Seconds</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Mint Button */}
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              className="text-center"
-            >
-              <motion.button
-                whileHover={{ scale: 1.02, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={handleMint}
-                disabled={isMinting || minted >= maxSupply}
-                className={`w-full py-6 px-8 rounded-2xl text-xl font-semibold imperial-text transition-all duration-300 ${
-                  isMinting || minted >= maxSupply
-                    ? 'bg-gray-600 text-gray-400 cursor-not-allowed'
-                    : 'bg-gradient-to-r from-bonk-gold to-bonk-red text-black shadow-lg hover:shadow-xl'
-                }`}
-              >
-                {isMinting ? (
-                  <div className="flex items-center justify-center">
-                    <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-black mr-3"></div>
-                    Minting...
-                  </div>
-                ) : minted >= maxSupply ? (
-                  <div className="flex items-center justify-center">
-                    <Crown className="mr-3" size={24} />
-                    Sold Out
-                  </div>
-                ) : (
-                  <div className="flex items-center justify-center">
-                    <Zap className="mr-3" size={24} />
-                    Mint Now
-                  </div>
-                )}
-              </motion.button>
-              
-              <p className="text-white/60 text-sm mt-6 font-medium">
-                Connect your wallet to begin the ritual
-              </p>
-            </motion.div>
-          </motion.div>
-        </div>
-
-        {/* Dynasty Mechanics Preview */}
+        {/* Minting Details */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 60 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
-          className="mt-20"
+          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+          className="mb-16"
         >
-          <h3 className="text-3xl font-bold text-bonk-gold imperial-text mb-12 text-center">
+          <div className="glass-effect rounded-3xl p-10 md:p-16 border border-white/10 hover:border-bonk-gold/30 transition-all duration-500">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              {/* Left side - Minting Info */}
+              <div className="space-y-8">
+                <div className="text-center md:text-left">
+                  <h3 className="text-3xl font-bold text-bonk-gold imperial-text mb-4">
+                    Minting Requirements
+                  </h3>
+                  
+                  {/* Price */}
+                  <div className="mb-6">
+                    <div className="flex items-center justify-center md:justify-start mb-2">
+                      <Crown className="text-bonk-gold mr-2" size={24} />
+                      <span className="text-bonk-gold font-bold text-xl">Price: 1 SOL</span>
+                    </div>
+                  </div>
+
+                  {/* Token Requirement */}
+                  <div className="mb-6">
+                    <div className="flex items-center justify-center md:justify-start mb-2">
+                      <Zap className="text-bonk-red mr-2" size={24} />
+                      <span className="text-bonk-red font-bold text-xl">Requirement: 5,000,000 Tokens</span>
+                    </div>
+                  </div>
+
+                  {/* Wallet Status */}
+                  <div className="mb-8">
+                    <div className="flex items-center justify-center md:justify-start mb-4">
+                      <Wallet className="text-bonk-purple mr-2" size={24} />
+                      <span className="text-bonk-purple font-bold text-lg">
+                        {isWalletConnected ? 'Wallet Connected' : 'Wallet Not Connected'}
+                      </span>
+                    </div>
+                    
+                    {isWalletConnected && (
+                      <div className="text-center md:text-left">
+                        <p className="text-white/80 mb-2">Token Balance: {tokenBalance.toLocaleString()}</p>
+                        <div className={`text-sm ${tokenBalance >= 5000000 ? 'text-green-400' : 'text-red-400'}`}>
+                          {tokenBalance >= 5000000 ? '✓ Eligible to mint' : '✗ Need more tokens'}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="space-y-4">
+                    {!isWalletConnected ? (
+                      <button
+                        onClick={handleConnectWallet}
+                        className="w-full md:w-auto bg-gradient-to-r from-bonk-gold to-yellow-400 text-black font-bold py-4 px-8 rounded-lg hover:shadow-lg hover:shadow-bonk-gold/50 transition-all duration-300 imperial-text text-lg"
+                      >
+                        Connect Wallet
+                      </button>
+                    ) : (
+                      <button
+                        onClick={handleMint}
+                        disabled={!isWalletConnected || tokenBalance < 5000000 || isMinting}
+                        className={`w-full md:w-auto font-bold py-4 px-8 rounded-lg transition-all duration-300 imperial-text text-lg ${
+                          isWalletConnected && tokenBalance >= 5000000 && !isMinting
+                            ? 'bg-gradient-to-r from-bonk-red to-red-600 text-white hover:shadow-lg hover:shadow-bonk-red/50'
+                            : 'bg-gray-600 text-gray-400 cursor-not-allowed'
+                        }`}
+                      >
+                        {isMinting ? 'Minting...' : 'Mint NFT (1 SOL)'}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              {/* Right side - Countdown */}
+              <div className="text-center">
+                <h4 className="text-2xl font-bold text-bonk-gold imperial-text mb-6">
+                  Minting Opens In
+                </h4>
+                <div className="grid grid-cols-4 gap-4">
+                  <div className="bg-gradient-to-b from-bonk-gold/20 to-transparent rounded-lg p-4 border border-bonk-gold/30">
+                    <div className="text-3xl font-bold text-bonk-gold">{timeLeft.days}</div>
+                    <div className="text-sm text-white/60">Days</div>
+                  </div>
+                  <div className="bg-gradient-to-b from-bonk-gold/20 to-transparent rounded-lg p-4 border border-bonk-gold/30">
+                    <div className="text-3xl font-bold text-bonk-gold">{timeLeft.hours}</div>
+                    <div className="text-sm text-white/60">Hours</div>
+                  </div>
+                  <div className="bg-gradient-to-b from-bonk-gold/20 to-transparent rounded-lg p-4 border border-bonk-gold/30">
+                    <div className="text-3xl font-bold text-bonk-gold">{timeLeft.minutes}</div>
+                    <div className="text-sm text-white/60">Minutes</div>
+                  </div>
+                  <div className="bg-gradient-to-b from-bonk-gold/20 to-transparent rounded-lg p-4 border border-bonk-gold/30">
+                    <div className="text-3xl font-bold text-bonk-gold">{timeLeft.seconds}</div>
+                    <div className="text-sm text-white/60">Seconds</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Dynasty Mechanics */}
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
+        >
+          <h3 className="text-3xl font-bold text-bonk-gold imperial-text text-center mb-12">
             Dynasty Mechanics
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {mechanics.map((mechanic, index) => (
               <motion.div
                 key={mechanic.title}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 40 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.8 + index * 0.1, ease: "easeOut" }}
-                className="glass-effect rounded-2xl p-8 text-center border border-white/10 hover:border-bonk-gold/30 transition-all duration-300 group"
+                transition={{ duration: 0.8, delay: 0.6 + index * 0.1, ease: "easeOut" }}
+                className="group"
               >
-                {/* Neon Chinese character icon */}
-                <div className="relative mb-6">
-                  <div className={`w-16 h-16 bg-gradient-to-r ${mechanic.color} rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300`}>
-                    <div className="text-2xl text-white imperial-text font-black">
-                      {mechanic.icon}
+                <div className="glass-effect rounded-2xl p-6 border border-white/10 hover:border-bonk-gold/30 transition-all duration-500 h-full">
+                  <div className="text-center">
+                    {/* Chinese character icon */}
+                    <div className={`w-12 h-12 bg-gradient-to-r ${mechanic.color} rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-xl transition-all duration-300`}>
+                      <div className="text-xl text-white imperial-text font-black">
+                        {mechanic.chinese}
+                      </div>
                     </div>
+                    
+                    <h4 className="text-lg font-bold text-bonk-gold imperial-text mb-2">
+                      {mechanic.title}
+                    </h4>
+                    <p className="text-white/80 text-sm leading-relaxed">
+                      {mechanic.description}
+                    </p>
                   </div>
-                  {/* Neon glow effect */}
-                  <div className={`absolute inset-0 bg-gradient-to-r ${mechanic.color} rounded-full blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-300`}></div>
                 </div>
-                
-                <h4 className="text-lg font-bold text-bonk-gold imperial-text mb-3">
-                  {mechanic.title}
-                </h4>
-                <p className="text-bonk-gold/60 text-sm imperial-text mb-3">
-                  {mechanic.chinese}
-                </p>
-                <p className="text-white/70 text-sm leading-relaxed">
-                  {mechanic.desc}
-                </p>
               </motion.div>
             ))}
           </div>
