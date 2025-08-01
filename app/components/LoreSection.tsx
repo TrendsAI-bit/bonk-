@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Scroll, Crown, Sword, Shield } from 'lucide-react'
+import { Crown, Sword, Shield } from 'lucide-react'
 
 const LoreSection = () => {
   const ref = useRef(null)
@@ -47,25 +47,6 @@ const LoreSection = () => {
         <div className="absolute inset-0 bg-bonk-gold/5"></div>
       </div>
 
-      {/* Floating scroll elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-20 left-10 w-24 h-32 bg-gradient-to-b from-bonk-gold/10 to-transparent rounded-lg border border-bonk-gold/20 transform rotate-12"
-        ></motion.div>
-        <motion.div
-          animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute bottom-20 right-10 w-20 h-28 bg-gradient-to-b from-bonk-red/10 to-transparent rounded-lg border border-bonk-red/20 transform -rotate-12"
-        ></motion.div>
-        <motion.div
-          animate={{ x: [0, 10, 0], y: [0, -10, 0] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 4 }}
-          className="absolute top-1/2 left-1/4 w-16 h-20 bg-gradient-to-b from-bonk-purple/10 to-transparent rounded-lg border border-bonk-purple/20 transform rotate-6"
-        ></motion.div>
-      </div>
-
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -73,20 +54,6 @@ const LoreSection = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="text-center mb-20"
         >
-          {/* Ancient scroll decoration */}
-          <div className="relative mb-8">
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={isInView ? { scale: 1, opacity: 1 } : {}}
-              transition={{ duration: 1.2, delay: 0.3 }}
-              className="w-24 h-32 bg-gradient-to-b from-bonk-gold/20 to-transparent rounded-lg border border-bonk-gold/30 mx-auto transform rotate-6"
-            >
-              <div className="flex items-center justify-center h-full">
-                <Scroll className="text-bonk-gold" size={32} />
-              </div>
-            </motion.div>
-          </div>
-
           <h2 className="text-4xl md:text-6xl font-bold text-bonk-gold imperial-text mb-6">
             The Legend
           </h2>
