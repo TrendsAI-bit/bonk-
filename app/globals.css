@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
 
 :root {
   --foreground-rgb: 255, 255, 255;
@@ -39,12 +41,20 @@ a {
 }
 
 .imperial-text {
-  font-family: 'Noto Serif SC', serif;
-  font-weight: 900;
+  font-family: 'Ma Shan Zheng', cursive;
+  font-weight: 400;
+  letter-spacing: 0.05em;
 }
 
 .scroll-text {
-  font-family: 'Courier New', monospace;
+  font-family: 'ZCOOL KuaiLe', cursive;
+  font-weight: 400;
+}
+
+.brush-text {
+  font-family: 'Ma Shan Zheng', cursive;
+  font-weight: 400;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
 .gradient-text {
@@ -74,9 +84,9 @@ a {
 }
 
 .glass-effect {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .royal-border {
@@ -86,4 +96,86 @@ a {
 
 .imperial-shadow {
   box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+}
+
+.neon-glow {
+  text-shadow: 
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 15px currentColor,
+    0 0 20px currentColor;
+}
+
+.neon-border {
+  box-shadow: 
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 15px currentColor,
+    inset 0 0 5px currentColor;
+}
+
+/* Enhanced animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFD700; }
+  100% { box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700; }
+}
+
+@keyframes scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+  }
+  50% { 
+    box-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+  }
+}
+
+/* Custom utility classes */
+.text-neon-gold {
+  color: #FFD700;
+  text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
+}
+
+.text-neon-red {
+  color: #DC2626;
+  text-shadow: 0 0 10px #DC2626, 0 0 20px #DC2626, 0 0 30px #DC2626;
+}
+
+.text-neon-purple {
+  color: #7C3AED;
+  text-shadow: 0 0 10px #7C3AED, 0 0 20px #7C3AED, 0 0 30px #7C3AED;
+}
+
+.border-neon-gold {
+  border-color: #FFD700;
+  box-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFD700;
+}
+
+.border-neon-red {
+  border-color: #DC2626;
+  box-shadow: 0 0 5px #DC2626, 0 0 10px #DC2626, 0 0 15px #DC2626;
+}
+
+.border-neon-purple {
+  border-color: #7C3AED;
+  box-shadow: 0 0 5px #7C3AED, 0 0 10px #7C3AED, 0 0 15px #7C3AED;
 } 

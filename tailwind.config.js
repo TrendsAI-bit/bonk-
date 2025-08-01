@@ -16,8 +16,10 @@ module.exports = {
         'bonk-shadow': '#374151',
       },
       fontFamily: {
-        'imperial': ['serif'],
-        'scroll': ['monospace'],
+        'imperial': ['Ma Shan Zheng', 'cursive'],
+        'scroll': ['ZCOOL KuaiLe', 'cursive'],
+        'brush': ['Ma Shan Zheng', 'cursive'],
+        'serif': ['Noto Serif SC', 'serif'],
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
@@ -25,6 +27,7 @@ module.exports = {
         'scroll': 'scroll 20s linear infinite',
         'fade-in': 'fadeIn 0.5s ease-in-out',
         'slide-up': 'slideUp 0.8s ease-out',
+        'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
       },
       keyframes: {
         float: {
@@ -46,6 +49,14 @@ module.exports = {
         slideUp: {
           '0%': { transform: 'translateY(50px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        'pulse-glow': {
+          '0%, 100%': { 
+            boxShadow: '0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor'
+          },
+          '50%': { 
+            boxShadow: '0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor'
+          },
         },
       },
     },

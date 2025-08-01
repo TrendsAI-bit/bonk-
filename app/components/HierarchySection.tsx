@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
+import Image from 'next/image'
 
 const HierarchySection = () => {
   const ref = useRef(null)
@@ -17,7 +18,8 @@ const HierarchySection = () => {
       ids: [6],
       color: "from-bonk-gold to-yellow-400",
       description: "The one true ruler. Mythical, majestic, and dangerously based.",
-      chineseDesc: "真正的统治者。神话般的，威严的，危险地基于。"
+      chineseDesc: "真正的统治者。神话般的，威严的，危险地基于。",
+      sampleImage: "/6.png"
     },
     {
       name: "The Shadow Emperor",
@@ -27,7 +29,8 @@ const HierarchySection = () => {
       ids: [7],
       color: "from-bonk-purple to-purple-600",
       description: "Puppetmaster of the realm. Moves silently. Mints loudly.",
-      chineseDesc: "领域的傀儡师。静默移动。大声铸造。"
+      chineseDesc: "领域的傀儡师。静默移动。大声铸造。",
+      sampleImage: "/7.png"
     },
     {
       name: "Frog Warriors",
@@ -37,7 +40,8 @@ const HierarchySection = () => {
       ids: [8, 9, 10, 11, 12, 13],
       color: "from-green-400 to-green-600",
       description: "Martial protectors of the dynasty. Strike fast. Leap harder.",
-      chineseDesc: "王朝的武术保护者。快速出击。更努力地跳跃。"
+      chineseDesc: "王朝的武术保护者。快速出击。更努力地跳跃。",
+      sampleImage: "/8.png"
     },
     {
       name: "Court Magistrates",
@@ -47,7 +51,8 @@ const HierarchySection = () => {
       ids: Array.from({length: 20}, (_, i) => i + 81),
       color: "from-bonk-red to-red-600",
       description: "Scholars of the scroll. Keepers of chaos. Report jeets daily.",
-      chineseDesc: "卷轴的学者。混乱的守护者。每日报告背叛者。"
+      chineseDesc: "卷轴的学者。混乱的守护者。每日报告背叛者。",
+      sampleImage: "/81.png"
     },
     {
       name: "Dog Royal Peasants",
@@ -57,7 +62,8 @@ const HierarchySection = () => {
       ids: [...Array.from({length: 5}, (_, i) => i + 1), ...Array.from({length: 67}, (_, i) => i + 14)],
       color: "from-gray-400 to-gray-600",
       description: "Loyal, meme-trained, and always barking for airdrops.",
-      chineseDesc: "忠诚的，迷因训练的，总是为空投而吠叫。"
+      chineseDesc: "忠诚的，迷因训练的，总是为空投而吠叫。",
+      sampleImage: "/1.png"
     }
   ]
 
@@ -93,16 +99,37 @@ const HierarchySection = () => {
             >
               <motion.div
                 whileHover={{ scale: 1.02, y: -8 }}
-                className="glass-effect rounded-2xl p-8 h-full border border-white/10 hover:border-bonk-gold/30 transition-all duration-500"
+                className="glass-effect rounded-2xl p-8 h-full border border-white/10 hover:border-bonk-gold/30 transition-all duration-500 overflow-hidden"
               >
                 {/* Rarity Badge */}
                 <div className="flex justify-between items-start mb-6">
-                  <span className={`px-4 py-2 rounded-full text-sm font-semibold text-white bg-gradient-to-r ${tier.color}`}>
+                  <span className={`px-4 py-2 rounded-full text-sm font-semibold text-white bg-gradient-to-r ${tier.color} shadow-lg`}>
                     {tier.rarity}
                   </span>
                   <span className="text-bonk-gold text-sm font-semibold">
                     {tier.count} NFT{tier.count > 1 ? 's' : ''}
                   </span>
+                </div>
+
+                {/* NFT Image */}
+                <div className="relative mb-6 group-hover:scale-105 transition-transform duration-500">
+                  <div className="relative w-full h-48 rounded-xl overflow-hidden border border-bonk-gold/20">
+                    <Image
+                      src={tier.sampleImage}
+                      alt={tier.name}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                    {/* Neon glow effect */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-bonk-gold/10 to-bonk-red/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  </div>
+                  
+                  {/* Rarity glow effect */}
+                  <div className={`absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r ${tier.color} rounded-full flex items-center justify-center shadow-lg animate-pulse`}>
+                    <div className="w-4 h-4 bg-white rounded-full"></div>
+                  </div>
                 </div>
 
                 {/* Title */}
@@ -112,7 +139,7 @@ const HierarchySection = () => {
                 >
                   {tier.name}
                 </motion.h3>
-                <p className="text-bonk-gold text-lg imperial-text mb-6">
+                <p className="text-bonk-gold text-lg imperial-text mb-6 font-medium">
                   {tier.chinese}
                 </p>
 
@@ -131,16 +158,12 @@ const HierarchySection = () => {
                   </p>
                 </div>
 
-                {/* Animated character placeholder */}
-                <motion.div
-                  animate={{ y: [0, -4, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="mt-6 h-20 bg-gradient-to-br from-white/5 to-transparent rounded-lg flex items-center justify-center border border-white/10"
-                >
-                  <div className="w-8 h-8 bg-gradient-to-r from-bonk-gold/20 to-bonk-red/20 rounded-full flex items-center justify-center">
-                    <div className="w-4 h-4 bg-bonk-gold/60 rounded-full"></div>
+                {/* Chinese brush character decoration */}
+                <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-40 transition-opacity duration-500">
+                  <div className="text-3xl text-bonk-gold imperial-text font-black">
+                    {tier.chinese.charAt(0)}
                   </div>
-                </motion.div>
+                </div>
               </motion.div>
             </motion.div>
           ))}

@@ -50,6 +50,37 @@ const MintSection = () => {
   const mintPrice = "0.1 SOL"
   const maxSupply = 100
 
+  const mechanics = [
+    { 
+      title: "Palace Reveals", 
+      desc: "Lore unlocks as holders rise in rank", 
+      chinese: "宫殿揭示",
+      icon: "宫",
+      color: "from-bonk-gold to-yellow-400"
+    },
+    { 
+      title: "Scroll Drops", 
+      desc: "Airdropped treasures of prophecy and power", 
+      chinese: "卷轴掉落",
+      icon: "卷",
+      color: "from-bonk-red to-red-600"
+    },
+    { 
+      title: "Bonkocracy", 
+      desc: "Holders vote on royal decrees", 
+      chinese: "邦克民主",
+      icon: "民",
+      color: "from-bonk-purple to-purple-600"
+    },
+    { 
+      title: "Warrior Trials", 
+      desc: "Frog PvP coming soon... maybe", 
+      chinese: "武士试炼",
+      icon: "武",
+      color: "from-green-400 to-green-600"
+    }
+  ]
+
   return (
     <section
       id="mint"
@@ -227,23 +258,31 @@ const MintSection = () => {
             Dynasty Mechanics
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { title: "Palace Reveals", desc: "Lore unlocks as holders rise in rank", icon: "🏮" },
-              { title: "Scroll Drops", desc: "Airdropped treasures of prophecy and power", icon: "🎖️" },
-              { title: "Bonkocracy", desc: "Holders vote on royal decrees", icon: "🧠" },
-              { title: "Warrior Trials", desc: "Frog PvP coming soon... maybe", icon: "🐸" }
-            ].map((mechanic, index) => (
+            {mechanics.map((mechanic, index) => (
               <motion.div
                 key={mechanic.title}
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.8 + index * 0.1, ease: "easeOut" }}
-                className="glass-effect rounded-2xl p-8 text-center border border-white/10 hover:border-bonk-gold/30 transition-all duration-300"
+                className="glass-effect rounded-2xl p-8 text-center border border-white/10 hover:border-bonk-gold/30 transition-all duration-300 group"
               >
-                <div className="text-3xl mb-4">{mechanic.icon}</div>
+                {/* Neon Chinese character icon */}
+                <div className="relative mb-6">
+                  <div className={`w-16 h-16 bg-gradient-to-r ${mechanic.color} rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300`}>
+                    <div className="text-2xl text-white imperial-text font-black">
+                      {mechanic.icon}
+                    </div>
+                  </div>
+                  {/* Neon glow effect */}
+                  <div className={`absolute inset-0 bg-gradient-to-r ${mechanic.color} rounded-full blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-300`}></div>
+                </div>
+                
                 <h4 className="text-lg font-bold text-bonk-gold imperial-text mb-3">
                   {mechanic.title}
                 </h4>
+                <p className="text-bonk-gold/60 text-sm imperial-text mb-3">
+                  {mechanic.chinese}
+                </p>
                 <p className="text-white/70 text-sm leading-relaxed">
                   {mechanic.desc}
                 </p>
