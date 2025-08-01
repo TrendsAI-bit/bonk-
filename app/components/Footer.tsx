@@ -12,10 +12,10 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="bg-gradient-to-t from-black to-bonk-dark py-16 relative overflow-hidden">
+    <footer className="bg-gradient-to-t from-black to-bonk-dark py-20 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0">
-        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-64 h-64 bg-gradient-to-t from-bonk-gold/10 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-64 h-64 bg-gradient-to-t from-bonk-gold/5 to-transparent rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -24,18 +24,18 @@ const Footer = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1, ease: "easeOut" }}
             className="text-center md:text-left"
           >
-            <div className="flex items-center justify-center md:justify-start mb-6">
-              <div className="w-16 h-16 bg-gradient-to-r from-bonk-gold to-bonk-red rounded-full flex items-center justify-center mr-4 imperial-shadow">
+            <div className="flex items-center justify-center md:justify-start mb-8">
+              <div className="w-16 h-16 bg-gradient-to-r from-bonk-gold to-bonk-red rounded-full flex items-center justify-center mr-6 shadow-lg">
                 <Crown className="text-black" size={32} />
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-bonk-gold imperial-text">
                   Bonk Dynasty
                 </h3>
-                <p className="text-white/60 text-sm">
+                <p className="text-white/60 text-sm font-medium">
                   不疯魔，不成王
                 </p>
               </div>
@@ -50,13 +50,13 @@ const Footer = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
             className="text-center"
           >
-            <h4 className="text-lg font-bold text-bonk-gold imperial-text mb-6">
+            <h4 className="text-lg font-bold text-bonk-gold imperial-text mb-8">
               Quick Links
             </h4>
-            <div className="space-y-3">
+            <div className="space-y-4">
               {[
                 { name: 'Collection', href: '#hierarchy' },
                 { name: 'Lore', href: '#lore' },
@@ -67,8 +67,8 @@ const Footer = () => {
                 <motion.a
                   key={link.name}
                   href={link.href}
-                  whileHover={{ scale: 1.05 }}
-                  className="block text-white/70 hover:text-bonk-gold transition-colors duration-200"
+                  whileHover={{ scale: 1.02 }}
+                  className="block text-white/70 hover:text-bonk-gold transition-colors duration-300 font-medium"
                 >
                   {link.name}
                 </motion.a>
@@ -80,26 +80,26 @@ const Footer = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
             className="text-center md:text-right"
           >
-            <h4 className="text-lg font-bold text-bonk-gold imperial-text mb-6">
+            <h4 className="text-lg font-bold text-bonk-gold imperial-text mb-8">
               Join the Dynasty
             </h4>
-            <div className="flex justify-center md:justify-end space-x-4 mb-6">
+            <div className="flex justify-center md:justify-end space-x-4 mb-8">
               {socialLinks.map((social) => (
                 <motion.a
                   key={social.name}
                   href={social.url}
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className={`p-3 bg-gradient-to-r from-bonk-gold/20 to-bonk-red/20 rounded-full border border-bonk-gold/30 text-bonk-gold transition-all duration-200 ${social.color}`}
+                  className={`p-4 bg-gradient-to-r from-bonk-gold/10 to-bonk-red/10 rounded-full border border-bonk-gold/20 text-bonk-gold transition-all duration-300 ${social.color}`}
                 >
                   <social.icon size={20} />
                 </motion.a>
               ))}
             </div>
-            <p className="text-white/60 text-sm">
+            <p className="text-white/60 text-sm font-medium">
               Follow us for updates and community events
             </p>
           </motion.div>
@@ -109,19 +109,19 @@ const Footer = () => {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-12 pt-8 border-t border-white/20"
+          transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
+          className="mt-16 pt-8 border-t border-white/10"
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="flex items-center space-x-2 text-white/60 text-sm">
+            <div className="flex items-center space-x-3 text-white/60 text-sm">
               <Heart className="text-bonk-red" size={16} />
-              <span>Built with love for the Bonk community</span>
+              <span className="font-medium">Built with love for the Bonk community</span>
             </div>
             
-            <div className="flex items-center space-x-4 text-white/60 text-sm">
-              <span>© {currentYear} Bonk Dynasty</span>
+            <div className="flex items-center space-x-6 text-white/60 text-sm">
+              <span className="font-medium">© {currentYear} Bonk Dynasty</span>
               <span>•</span>
-              <span>All rights reserved</span>
+              <span className="font-medium">All rights reserved</span>
             </div>
           </div>
         </motion.div>
@@ -130,19 +130,19 @@ const Footer = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-8 text-center"
+          transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
+          className="mt-12 text-center"
         >
-          <div className="glass-effect rounded-xl p-6 royal-border">
-            <h5 className="text-bonk-gold imperial-text font-bold mb-2">
+          <div className="glass-effect rounded-3xl p-10 border border-white/10">
+            <h5 className="text-bonk-gold imperial-text font-bold mb-4 text-xl">
               Imperial Decree
             </h5>
-            <p className="text-white/80 text-sm leading-relaxed">
+            <p className="text-white/80 text-lg leading-relaxed mb-4">
               "In the name of the Bonkperor, we declare this dynasty eternal. 
               May the memes flow freely, and may chaos reign supreme. 
               Long live the Bonk Dynasty!"
             </p>
-            <p className="text-bonk-gold/70 imperial-text text-sm mt-2">
+            <p className="text-bonk-gold/70 imperial-text text-lg leading-relaxed">
               "以邦克皇帝的名义，我们宣布这个王朝永恒。愿迷因自由流淌，愿混乱至高无上。邦克王朝万岁！"
             </p>
           </div>

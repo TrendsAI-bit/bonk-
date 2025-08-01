@@ -61,9 +61,9 @@ const FAQSection = () => {
     <section
       id="faq"
       ref={ref}
-      className="min-h-screen bg-gradient-to-b from-black via-bonk-dark to-black py-20 relative overflow-hidden"
+      className="min-h-screen bg-gradient-to-b from-black via-bonk-dark to-black py-24 relative overflow-hidden"
     >
-      {/* Background scroll pattern */}
+      {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-bonk-gold/5"></div>
       </div>
@@ -72,16 +72,16 @@ const FAQSection = () => {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="text-center mb-20"
         >
-          <div className="flex items-center justify-center mb-6">
+          <div className="flex items-center justify-center mb-8">
             <Scroll className="text-bonk-gold mr-4" size={32} />
-            <h2 className="text-5xl md:text-7xl font-bold text-bonk-gold imperial-text">
-              皇家法令
+            <h2 className="text-4xl md:text-6xl font-bold text-bonk-gold imperial-text">
+              Royal Decrees
             </h2>
           </div>
-          <p className="text-xl text-white/80 max-w-3xl mx-auto">
+          <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
             Imperial edicts and answers to common questions about the Bonk Dynasty
           </p>
         </motion.div>
@@ -90,24 +90,24 @@ const FAQSection = () => {
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.8, delay: index * 0.1, ease: "easeOut" }}
               className="group"
             >
               <motion.div
                 whileHover={{ scale: 1.01 }}
-                className="glass-effect rounded-2xl royal-border overflow-hidden"
+                className="glass-effect rounded-2xl border border-white/10 hover:border-bonk-gold/30 overflow-hidden transition-all duration-300"
               >
                 <motion.button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full p-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors duration-200"
+                  className="w-full p-8 text-left flex items-center justify-between hover:bg-white/5 transition-colors duration-300"
                 >
                   <div className="flex items-center">
-                    <div className="w-8 h-8 bg-gradient-to-r from-bonk-gold to-bonk-red rounded-full flex items-center justify-center mr-4">
+                    <div className="w-10 h-10 bg-gradient-to-r from-bonk-gold to-bonk-red rounded-full flex items-center justify-center mr-6">
                       <span className="text-black font-bold text-sm">{index + 1}</span>
                     </div>
-                    <h3 className="text-lg font-bold text-bonk-gold imperial-text">
+                    <h3 className="text-xl font-bold text-bonk-gold imperial-text">
                       {faq.question}
                     </h3>
                   </div>
@@ -116,7 +116,7 @@ const FAQSection = () => {
                     transition={{ duration: 0.3 }}
                     className="text-bonk-gold"
                   >
-                    {openFAQ === index ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                    {openFAQ === index ? <ChevronUp size={24} /> : <ChevronDown size={24} />}
                   </motion.div>
                 </motion.button>
 
@@ -126,17 +126,19 @@ const FAQSection = () => {
                     height: openFAQ === index ? "auto" : 0,
                     opacity: openFAQ === index ? 1 : 0
                   }}
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
                   className="overflow-hidden"
                 >
-                  <div className="px-6 pb-6 space-y-4">
-                    <div className="border-t border-white/20 pt-4">
-                      <p className="text-white/90 leading-relaxed mb-4">
+                  <div className="px-8 pb-8 space-y-6">
+                    <div className="border-t border-white/10 pt-6">
+                      <p className="text-white/90 leading-relaxed mb-6 text-lg">
                         {faq.answer}
                       </p>
-                      <p className="text-bonk-gold/80 imperial-text leading-relaxed">
-                        {faq.chinese}
-                      </p>
+                      <div className="border-l-4 border-bonk-gold/30 pl-6">
+                        <p className="text-bonk-gold/80 imperial-text leading-relaxed text-lg">
+                          {faq.chinese}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -147,32 +149,32 @@ const FAQSection = () => {
 
         {/* Additional Info */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-16 text-center"
+          transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
+          className="mt-20 text-center"
         >
-          <div className="glass-effect rounded-2xl p-8 royal-border">
-            <h3 className="text-2xl font-bold text-bonk-gold imperial-text mb-4">
+          <div className="glass-effect rounded-3xl p-10 border border-white/10">
+            <h3 className="text-3xl font-bold text-bonk-gold imperial-text mb-6">
               Still Have Questions?
             </h3>
-            <p className="text-white/80 mb-6">
+            <p className="text-white/80 mb-8 text-lg leading-relaxed">
               Join our community to learn more about the Bonk Dynasty
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-bonk-gold to-bonk-red text-black px-6 py-3 rounded-lg font-bold imperial-text"
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="bg-gradient-to-r from-bonk-gold to-bonk-red text-black px-8 py-4 rounded-lg font-semibold imperial-text shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                📱 Join Discord
+                Join Discord
               </motion.button>
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-bonk-purple to-purple-600 text-white px-6 py-3 rounded-lg font-bold imperial-text"
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="border-2 border-bonk-gold/50 text-bonk-gold px-8 py-4 rounded-lg font-semibold imperial-text hover:bg-bonk-gold/10 transition-all duration-300"
               >
-                🐦 Follow Twitter
+                Follow Twitter
               </motion.button>
             </div>
           </div>

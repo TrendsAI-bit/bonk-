@@ -65,19 +65,19 @@ const HierarchySection = () => {
     <section
       id="hierarchy"
       ref={ref}
-      className="min-h-screen bg-gradient-to-b from-bonk-dark to-black py-20 relative overflow-hidden"
+      className="min-h-screen bg-gradient-to-b from-bonk-dark to-black py-24 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="text-center mb-20"
         >
-          <h2 className="text-5xl md:text-7xl font-bold text-bonk-gold imperial-text mb-6">
-            等级制度
+          <h2 className="text-4xl md:text-6xl font-bold text-bonk-gold imperial-text mb-6">
+            The Hierarchy
           </h2>
-          <p className="text-xl text-white/80 max-w-3xl mx-auto">
+          <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
             From humble peasants to supreme emperors, discover your place in the dynasty
           </p>
         </motion.div>
@@ -86,46 +86,46 @@ const HierarchySection = () => {
           {tiers.map((tier, index) => (
             <motion.div
               key={tier.name}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 60 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              transition={{ duration: 1, delay: index * 0.1, ease: "easeOut" }}
               className="group"
             >
               <motion.div
-                whileHover={{ scale: 1.05, y: -10 }}
-                className="glass-effect rounded-2xl p-6 h-full royal-border hover:imperial-shadow transition-all duration-300"
+                whileHover={{ scale: 1.02, y: -8 }}
+                className="glass-effect rounded-2xl p-8 h-full border border-white/10 hover:border-bonk-gold/30 transition-all duration-500"
               >
                 {/* Rarity Badge */}
-                <div className="flex justify-between items-start mb-4">
-                  <span className={`px-3 py-1 rounded-full text-xs font-bold text-white bg-gradient-to-r ${tier.color}`}>
+                <div className="flex justify-between items-start mb-6">
+                  <span className={`px-4 py-2 rounded-full text-sm font-semibold text-white bg-gradient-to-r ${tier.color}`}>
                     {tier.rarity}
                   </span>
-                  <span className="text-bonk-gold text-sm font-bold">
+                  <span className="text-bonk-gold text-sm font-semibold">
                     {tier.count} NFT{tier.count > 1 ? 's' : ''}
                   </span>
                 </div>
 
                 {/* Title */}
                 <motion.h3
-                  whileHover={{ scale: 1.05 }}
-                  className="text-2xl font-bold text-white imperial-text mb-2"
+                  whileHover={{ scale: 1.02 }}
+                  className="text-2xl font-bold text-white imperial-text mb-3"
                 >
                   {tier.name}
                 </motion.h3>
-                <p className="text-bonk-gold text-lg imperial-text mb-4">
+                <p className="text-bonk-gold text-lg imperial-text mb-6">
                   {tier.chinese}
                 </p>
 
                 {/* Description */}
-                <p className="text-white/80 text-sm mb-4 leading-relaxed">
+                <p className="text-white/80 text-sm mb-6 leading-relaxed">
                   {tier.description}
                 </p>
-                <p className="text-bonk-gold/70 text-sm imperial-text leading-relaxed">
+                <p className="text-bonk-gold/70 text-sm imperial-text leading-relaxed mb-6">
                   {tier.chineseDesc}
                 </p>
 
                 {/* ID Range */}
-                <div className="mt-4 pt-4 border-t border-white/20">
+                <div className="pt-6 border-t border-white/10">
                   <p className="text-white/60 text-xs scroll-text">
                     IDs: {tier.ids.length <= 6 ? tier.ids.join(', ') : `${tier.ids[0]}-${tier.ids[tier.ids.length-1]}`}
                   </p>
@@ -133,16 +133,13 @@ const HierarchySection = () => {
 
                 {/* Animated character placeholder */}
                 <motion.div
-                  animate={{ y: [0, -5, 0] }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                  className="mt-4 h-24 bg-gradient-to-br from-white/10 to-transparent rounded-lg flex items-center justify-center"
+                  animate={{ y: [0, -4, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="mt-6 h-20 bg-gradient-to-br from-white/5 to-transparent rounded-lg flex items-center justify-center border border-white/10"
                 >
-                  <span className="text-4xl opacity-50">
-                    {tier.name === "The Bonkperor" ? "👑" :
-                     tier.name === "The Shadow Emperor" ? "👤" :
-                     tier.name === "Frog Warriors" ? "🐸" :
-                     tier.name === "Court Magistrates" ? "📜" : "🐕"}
-                  </span>
+                  <div className="w-8 h-8 bg-gradient-to-r from-bonk-gold/20 to-bonk-red/20 rounded-full flex items-center justify-center">
+                    <div className="w-4 h-4 bg-bonk-gold/60 rounded-full"></div>
+                  </div>
                 </motion.div>
               </motion.div>
             </motion.div>
@@ -151,30 +148,30 @@ const HierarchySection = () => {
 
         {/* Summary Stats */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-16 glass-effect rounded-2xl p-8"
+          transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
+          className="mt-20 glass-effect rounded-3xl p-10 border border-white/10"
         >
-          <h3 className="text-3xl font-bold text-bonk-gold imperial-text mb-6 text-center">
-            Collection Summary
+          <h3 className="text-3xl font-bold text-bonk-gold imperial-text mb-8 text-center">
+            Collection Overview
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-3xl font-bold text-bonk-gold">100</div>
-              <div className="text-white/60 text-sm">Total Supply</div>
+              <div className="text-4xl font-bold text-bonk-gold mb-2">100</div>
+              <div className="text-white/60 text-sm font-medium">Total Supply</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-bonk-gold">2</div>
-              <div className="text-white/60 text-sm">Mythic</div>
+              <div className="text-4xl font-bold text-bonk-gold mb-2">2</div>
+              <div className="text-white/60 text-sm font-medium">Mythic</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-bonk-gold">6</div>
-              <div className="text-white/60 text-sm">Legendary</div>
+              <div className="text-4xl font-bold text-bonk-gold mb-2">6</div>
+              <div className="text-white/60 text-sm font-medium">Legendary</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-bonk-gold">20</div>
-              <div className="text-white/60 text-sm">Rare</div>
+              <div className="text-4xl font-bold text-bonk-gold mb-2">20</div>
+              <div className="text-white/60 text-sm font-medium">Rare</div>
             </div>
           </div>
         </motion.div>
