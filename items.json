@@ -1,0 +1,902 @@
+[
+  {
+    "id": 1,
+    "filename": "1.png",
+    "title": "Bonk Peasant #001",
+    "chinese_title": "狗百姓 #001",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 2,
+    "filename": "2.png",
+    "title": "Bonk Peasant #002",
+    "chinese_title": "狗百姓 #002",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 3,
+    "filename": "3.png",
+    "title": "Bonk Peasant #003",
+    "chinese_title": "狗百姓 #003",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 4,
+    "filename": "4.png",
+    "title": "Bonk Peasant #004",
+    "chinese_title": "狗百姓 #004",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 5,
+    "filename": "5.png",
+    "title": "Bonk Peasant #005",
+    "chinese_title": "狗百姓 #005",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 6,
+    "filename": "6.png",
+    "title": "The Bonkperor",
+    "chinese_title": "邦克皇帝",
+    "rarity": "Mythic",
+    "tier": "The Bonkperor",
+    "lore": "The supreme ruler of the Bonk Dynasty. Master of all memes and emperor of chaos. The one true Bonkperor."
+  },
+  {
+    "id": 7,
+    "filename": "7.png",
+    "title": "The Shadow Bonkperor",
+    "chinese_title": "影帝",
+    "rarity": "Mythic",
+    "tier": "The Shadow Emperor",
+    "lore": "The hidden hand behind the throne. Whispers say the Shadow Emperor pulls strings even the Bonkperor cannot see."
+  },
+  {
+    "id": 8,
+    "filename": "8.png",
+    "title": "Bonk Frog Warrior #008",
+    "chinese_title": "蛙武士 #008",
+    "rarity": "Legendary",
+    "tier": "Bonk Frog Warriors",
+    "lore": "Royal guardian of the dynasty. Master of ancient martial memes and imperial combat arts."
+  },
+  {
+    "id": 9,
+    "filename": "9.png",
+    "title": "Bonk Frog Warrior #009",
+    "chinese_title": "蛙武士 #009",
+    "rarity": "Legendary",
+    "tier": "Bonk Frog Warriors",
+    "lore": "Royal guardian of the dynasty. Master of ancient martial memes and imperial combat arts."
+  },
+  {
+    "id": 10,
+    "filename": "10.png",
+    "title": "Bonk Frog Warrior #010",
+    "chinese_title": "蛙武士 #010",
+    "rarity": "Legendary",
+    "tier": "Bonk Frog Warriors",
+    "lore": "Royal guardian of the dynasty. Master of ancient martial memes and imperial combat arts."
+  },
+  {
+    "id": 11,
+    "filename": "11.png",
+    "title": "Bonk Frog Warrior #011",
+    "chinese_title": "蛙武士 #011",
+    "rarity": "Legendary",
+    "tier": "Bonk Frog Warriors",
+    "lore": "Royal guardian of the dynasty. Master of ancient martial memes and imperial combat arts."
+  },
+  {
+    "id": 12,
+    "filename": "12.png",
+    "title": "Bonk Frog Warrior #012",
+    "chinese_title": "蛙武士 #012",
+    "rarity": "Legendary",
+    "tier": "Bonk Frog Warriors",
+    "lore": "Royal guardian of the dynasty. Master of ancient martial memes and imperial combat arts."
+  },
+  {
+    "id": 13,
+    "filename": "13.png",
+    "title": "Bonk Frog Warrior #013",
+    "chinese_title": "蛙武士 #013",
+    "rarity": "Legendary",
+    "tier": "Bonk Frog Warriors",
+    "lore": "Royal guardian of the dynasty. Master of ancient martial memes and imperial combat arts."
+  },
+  {
+    "id": 14,
+    "filename": "14.png",
+    "title": "Bonk Peasant #014",
+    "chinese_title": "狗百姓 #014",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 15,
+    "filename": "15.png",
+    "title": "Bonk Peasant #015",
+    "chinese_title": "狗百姓 #015",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 16,
+    "filename": "16.png",
+    "title": "Bonk Peasant #016",
+    "chinese_title": "狗百姓 #016",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 17,
+    "filename": "17.png",
+    "title": "Bonk Peasant #017",
+    "chinese_title": "狗百姓 #017",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 18,
+    "filename": "18.png",
+    "title": "Bonk Peasant #018",
+    "chinese_title": "狗百姓 #018",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 19,
+    "filename": "19.png",
+    "title": "Bonk Peasant #019",
+    "chinese_title": "狗百姓 #019",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 20,
+    "filename": "20.png",
+    "title": "Bonk Peasant #020",
+    "chinese_title": "狗百姓 #020",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 21,
+    "filename": "21.png",
+    "title": "Bonk Peasant #021",
+    "chinese_title": "狗百姓 #021",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 22,
+    "filename": "22.png",
+    "title": "Bonk Peasant #022",
+    "chinese_title": "狗百姓 #022",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 23,
+    "filename": "23.png",
+    "title": "Bonk Peasant #023",
+    "chinese_title": "狗百姓 #023",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 24,
+    "filename": "24.png",
+    "title": "Bonk Peasant #024",
+    "chinese_title": "狗百姓 #024",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 25,
+    "filename": "25.png",
+    "title": "Bonk Peasant #025",
+    "chinese_title": "狗百姓 #025",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 26,
+    "filename": "26.png",
+    "title": "Bonk Peasant #026",
+    "chinese_title": "狗百姓 #026",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 27,
+    "filename": "27.png",
+    "title": "Bonk Peasant #027",
+    "chinese_title": "狗百姓 #027",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 28,
+    "filename": "28.png",
+    "title": "Bonk Peasant #028",
+    "chinese_title": "狗百姓 #028",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 29,
+    "filename": "29.png",
+    "title": "Bonk Peasant #029",
+    "chinese_title": "狗百姓 #029",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 30,
+    "filename": "30.png",
+    "title": "Bonk Peasant #030",
+    "chinese_title": "狗百姓 #030",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 31,
+    "filename": "31.png",
+    "title": "Bonk Peasant #031",
+    "chinese_title": "狗百姓 #031",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 32,
+    "filename": "32.png",
+    "title": "Bonk Peasant #032",
+    "chinese_title": "狗百姓 #032",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 33,
+    "filename": "33.png",
+    "title": "Bonk Peasant #033",
+    "chinese_title": "狗百姓 #033",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 34,
+    "filename": "34.png",
+    "title": "Bonk Peasant #034",
+    "chinese_title": "狗百姓 #034",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 35,
+    "filename": "35.png",
+    "title": "Bonk Peasant #035",
+    "chinese_title": "狗百姓 #035",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 36,
+    "filename": "36.png",
+    "title": "Bonk Peasant #036",
+    "chinese_title": "狗百姓 #036",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 37,
+    "filename": "37.png",
+    "title": "Bonk Peasant #037",
+    "chinese_title": "狗百姓 #037",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 38,
+    "filename": "38.png",
+    "title": "Bonk Peasant #038",
+    "chinese_title": "狗百姓 #038",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 39,
+    "filename": "39.png",
+    "title": "Bonk Peasant #039",
+    "chinese_title": "狗百姓 #039",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 40,
+    "filename": "40.png",
+    "title": "Bonk Peasant #040",
+    "chinese_title": "狗百姓 #040",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 41,
+    "filename": "41.png",
+    "title": "Bonk Peasant #041",
+    "chinese_title": "狗百姓 #041",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 42,
+    "filename": "42.png",
+    "title": "Bonk Peasant #042",
+    "chinese_title": "狗百姓 #042",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 43,
+    "filename": "43.png",
+    "title": "Bonk Peasant #043",
+    "chinese_title": "狗百姓 #043",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 44,
+    "filename": "44.png",
+    "title": "Bonk Peasant #044",
+    "chinese_title": "狗百姓 #044",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 45,
+    "filename": "45.png",
+    "title": "Bonk Peasant #045",
+    "chinese_title": "狗百姓 #045",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 46,
+    "filename": "46.png",
+    "title": "Bonk Peasant #046",
+    "chinese_title": "狗百姓 #046",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 47,
+    "filename": "47.png",
+    "title": "Bonk Peasant #047",
+    "chinese_title": "狗百姓 #047",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 48,
+    "filename": "48.png",
+    "title": "Bonk Peasant #048",
+    "chinese_title": "狗百姓 #048",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 49,
+    "filename": "49.png",
+    "title": "Bonk Peasant #049",
+    "chinese_title": "狗百姓 #049",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 50,
+    "filename": "50.png",
+    "title": "Bonk Peasant #050",
+    "chinese_title": "狗百姓 #050",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 51,
+    "filename": "51.png",
+    "title": "Bonk Peasant #051",
+    "chinese_title": "狗百姓 #051",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 52,
+    "filename": "52.png",
+    "title": "Bonk Peasant #052",
+    "chinese_title": "狗百姓 #052",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 53,
+    "filename": "53.png",
+    "title": "Bonk Peasant #053",
+    "chinese_title": "狗百姓 #053",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 54,
+    "filename": "54.png",
+    "title": "Bonk Peasant #054",
+    "chinese_title": "狗百姓 #054",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 55,
+    "filename": "55.png",
+    "title": "Bonk Peasant #055",
+    "chinese_title": "狗百姓 #055",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 56,
+    "filename": "56.png",
+    "title": "Bonk Peasant #056",
+    "chinese_title": "狗百姓 #056",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 57,
+    "filename": "57.png",
+    "title": "Bonk Peasant #057",
+    "chinese_title": "狗百姓 #057",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 58,
+    "filename": "58.png",
+    "title": "Bonk Peasant #058",
+    "chinese_title": "狗百姓 #058",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 59,
+    "filename": "59.png",
+    "title": "Bonk Peasant #059",
+    "chinese_title": "狗百姓 #059",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 60,
+    "filename": "60.png",
+    "title": "Bonk Peasant #060",
+    "chinese_title": "狗百姓 #060",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 61,
+    "filename": "61.png",
+    "title": "Bonk Peasant #061",
+    "chinese_title": "狗百姓 #061",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 62,
+    "filename": "62.png",
+    "title": "Bonk Peasant #062",
+    "chinese_title": "狗百姓 #062",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 63,
+    "filename": "63.png",
+    "title": "Bonk Peasant #063",
+    "chinese_title": "狗百姓 #063",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 64,
+    "filename": "64.png",
+    "title": "Bonk Peasant #064",
+    "chinese_title": "狗百姓 #064",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 65,
+    "filename": "65.png",
+    "title": "Bonk Peasant #065",
+    "chinese_title": "狗百姓 #065",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 66,
+    "filename": "66.png",
+    "title": "Bonk Peasant #066",
+    "chinese_title": "狗百姓 #066",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 67,
+    "filename": "67.png",
+    "title": "Bonk Peasant #067",
+    "chinese_title": "狗百姓 #067",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 68,
+    "filename": "68.png",
+    "title": "Bonk Peasant #068",
+    "chinese_title": "狗百姓 #068",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 69,
+    "filename": "69.png",
+    "title": "Bonk Peasant #069",
+    "chinese_title": "狗百姓 #069",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 70,
+    "filename": "70.png",
+    "title": "Bonk Peasant #070",
+    "chinese_title": "狗百姓 #070",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 71,
+    "filename": "71.png",
+    "title": "Bonk Peasant #071",
+    "chinese_title": "狗百姓 #071",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 72,
+    "filename": "72.png",
+    "title": "Bonk Peasant #072",
+    "chinese_title": "狗百姓 #072",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 73,
+    "filename": "73.png",
+    "title": "Bonk Peasant #073",
+    "chinese_title": "狗百姓 #073",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 74,
+    "filename": "74.png",
+    "title": "Bonk Peasant #074",
+    "chinese_title": "狗百姓 #074",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 75,
+    "filename": "75.png",
+    "title": "Bonk Peasant #075",
+    "chinese_title": "狗百姓 #075",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 76,
+    "filename": "76.png",
+    "title": "Bonk Peasant #076",
+    "chinese_title": "狗百姓 #076",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 77,
+    "filename": "77.png",
+    "title": "Bonk Peasant #077",
+    "chinese_title": "狗百姓 #077",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 78,
+    "filename": "78.png",
+    "title": "Bonk Peasant #078",
+    "chinese_title": "狗百姓 #078",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 79,
+    "filename": "79.png",
+    "title": "Bonk Peasant #079",
+    "chinese_title": "狗百姓 #079",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 80,
+    "filename": "80.png",
+    "title": "Bonk Peasant #080",
+    "chinese_title": "狗百姓 #080",
+    "rarity": "Common",
+    "tier": "Dog Royal Peasants",
+    "lore": "Loyal subject of the realm. Bark loud, work hard, meme harder. Makes up the heart and noise of the dynasty."
+  },
+  {
+    "id": 81,
+    "filename": "81.png",
+    "title": "Court Magistrate #081",
+    "chinese_title": "御史官 #081",
+    "rarity": "Rare",
+    "tier": "Court Magistrates",
+    "lore": "Scholar, advisor, and bureaucrat upholding law and chaos in the empire. Trusted servant of the Bonk throne."
+  },
+  {
+    "id": 82,
+    "filename": "82.png",
+    "title": "Court Magistrate #082",
+    "chinese_title": "御史官 #082",
+    "rarity": "Rare",
+    "tier": "Court Magistrates",
+    "lore": "Scholar, advisor, and bureaucrat upholding law and chaos in the empire. Trusted servant of the Bonk throne."
+  },
+  {
+    "id": 83,
+    "filename": "83.png",
+    "title": "Court Magistrate #083",
+    "chinese_title": "御史官 #083",
+    "rarity": "Rare",
+    "tier": "Court Magistrates",
+    "lore": "Scholar, advisor, and bureaucrat upholding law and chaos in the empire. Trusted servant of the Bonk throne."
+  },
+  {
+    "id": 84,
+    "filename": "84.png",
+    "title": "Court Magistrate #084",
+    "chinese_title": "御史官 #084",
+    "rarity": "Rare",
+    "tier": "Court Magistrates",
+    "lore": "Scholar, advisor, and bureaucrat upholding law and chaos in the empire. Trusted servant of the Bonk throne."
+  },
+  {
+    "id": 85,
+    "filename": "85.png",
+    "title": "Court Magistrate #085",
+    "chinese_title": "御史官 #085",
+    "rarity": "Rare",
+    "tier": "Court Magistrates",
+    "lore": "Scholar, advisor, and bureaucrat upholding law and chaos in the empire. Trusted servant of the Bonk throne."
+  },
+  {
+    "id": 86,
+    "filename": "86.png",
+    "title": "Court Magistrate #086",
+    "chinese_title": "御史官 #086",
+    "rarity": "Rare",
+    "tier": "Court Magistrates",
+    "lore": "Scholar, advisor, and bureaucrat upholding law and chaos in the empire. Trusted servant of the Bonk throne."
+  },
+  {
+    "id": 87,
+    "filename": "87.png",
+    "title": "Court Magistrate #087",
+    "chinese_title": "御史官 #087",
+    "rarity": "Rare",
+    "tier": "Court Magistrates",
+    "lore": "Scholar, advisor, and bureaucrat upholding law and chaos in the empire. Trusted servant of the Bonk throne."
+  },
+  {
+    "id": 88,
+    "filename": "88.png",
+    "title": "Court Magistrate #088",
+    "chinese_title": "御史官 #088",
+    "rarity": "Rare",
+    "tier": "Court Magistrates",
+    "lore": "Scholar, advisor, and bureaucrat upholding law and chaos in the empire. Trusted servant of the Bonk throne."
+  },
+  {
+    "id": 89,
+    "filename": "89.png",
+    "title": "Court Magistrate #089",
+    "chinese_title": "御史官 #089",
+    "rarity": "Rare",
+    "tier": "Court Magistrates",
+    "lore": "Scholar, advisor, and bureaucrat upholding law and chaos in the empire. Trusted servant of the Bonk throne."
+  },
+  {
+    "id": 90,
+    "filename": "90.png",
+    "title": "Court Magistrate #090",
+    "chinese_title": "御史官 #090",
+    "rarity": "Rare",
+    "tier": "Court Magistrates",
+    "lore": "Scholar, advisor, and bureaucrat upholding law and chaos in the empire. Trusted servant of the Bonk throne."
+  },
+  {
+    "id": 91,
+    "filename": "91.png",
+    "title": "Court Magistrate #091",
+    "chinese_title": "御史官 #091",
+    "rarity": "Rare",
+    "tier": "Court Magistrates",
+    "lore": "Scholar, advisor, and bureaucrat upholding law and chaos in the empire. Trusted servant of the Bonk throne."
+  },
+  {
+    "id": 92,
+    "filename": "92.png",
+    "title": "Court Magistrate #092",
+    "chinese_title": "御史官 #092",
+    "rarity": "Rare",
+    "tier": "Court Magistrates",
+    "lore": "Scholar, advisor, and bureaucrat upholding law and chaos in the empire. Trusted servant of the Bonk throne."
+  },
+  {
+    "id": 93,
+    "filename": "93.png",
+    "title": "Court Magistrate #093",
+    "chinese_title": "御史官 #093",
+    "rarity": "Rare",
+    "tier": "Court Magistrates",
+    "lore": "Scholar, advisor, and bureaucrat upholding law and chaos in the empire. Trusted servant of the Bonk throne."
+  },
+  {
+    "id": 94,
+    "filename": "94.png",
+    "title": "Court Magistrate #094",
+    "chinese_title": "御史官 #094",
+    "rarity": "Rare",
+    "tier": "Court Magistrates",
+    "lore": "Scholar, advisor, and bureaucrat upholding law and chaos in the empire. Trusted servant of the Bonk throne."
+  },
+  {
+    "id": 95,
+    "filename": "95.png",
+    "title": "Court Magistrate #095",
+    "chinese_title": "御史官 #095",
+    "rarity": "Rare",
+    "tier": "Court Magistrates",
+    "lore": "Scholar, advisor, and bureaucrat upholding law and chaos in the empire. Trusted servant of the Bonk throne."
+  },
+  {
+    "id": 96,
+    "filename": "96.png",
+    "title": "Court Magistrate #096",
+    "chinese_title": "御史官 #096",
+    "rarity": "Rare",
+    "tier": "Court Magistrates",
+    "lore": "Scholar, advisor, and bureaucrat upholding law and chaos in the empire. Trusted servant of the Bonk throne."
+  },
+  {
+    "id": 97,
+    "filename": "97.png",
+    "title": "Court Magistrate #097",
+    "chinese_title": "御史官 #097",
+    "rarity": "Rare",
+    "tier": "Court Magistrates",
+    "lore": "Scholar, advisor, and bureaucrat upholding law and chaos in the empire. Trusted servant of the Bonk throne."
+  },
+  {
+    "id": 98,
+    "filename": "98.png",
+    "title": "Court Magistrate #098",
+    "chinese_title": "御史官 #098",
+    "rarity": "Rare",
+    "tier": "Court Magistrates",
+    "lore": "Scholar, advisor, and bureaucrat upholding law and chaos in the empire. Trusted servant of the Bonk throne."
+  },
+  {
+    "id": 99,
+    "filename": "99.png",
+    "title": "Court Magistrate #099",
+    "chinese_title": "御史官 #099",
+    "rarity": "Rare",
+    "tier": "Court Magistrates",
+    "lore": "Scholar, advisor, and bureaucrat upholding law and chaos in the empire. Trusted servant of the Bonk throne."
+  },
+  {
+    "id": 100,
+    "filename": "100.png",
+    "title": "Court Magistrate #100",
+    "chinese_title": "御史官 #100",
+    "rarity": "Rare",
+    "tier": "Court Magistrates",
+    "lore": "Scholar, advisor, and bureaucrat upholding law and chaos in the empire. Trusted servant of the Bonk throne."
+  }
+]
