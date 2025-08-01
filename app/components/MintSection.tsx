@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
-import { Clock, Zap, Crown, Wallet } from 'lucide-react'
+import { Clock, Zap, Crown, Wallet, AlertCircle } from 'lucide-react'
 
 const MintSection = () => {
   const ref = useRef(null)
@@ -17,6 +17,8 @@ const MintSection = () => {
   const [isWalletConnected, setIsWalletConnected] = useState(false)
   const [tokenBalance, setTokenBalance] = useState(0)
   const [isMinting, setIsMinting] = useState(false)
+  const [showVerificationPopup, setShowVerificationPopup] = useState(false)
+  const [walletAddress, setWalletAddress] = useState('')
 
   // Countdown timer
   useEffect(() => {
@@ -66,10 +68,36 @@ const MintSection = () => {
     }
   ]
 
-  const handleConnectWallet = () => {
-    // Simulate wallet connection
-    setIsWalletConnected(true)
-    setTokenBalance(7500000) // Simulate 7.5M token balance
+  const handleConnectWallet = async () => {
+    try {
+      // Check if Phantom wallet is available
+      if (typeof window !== 'undefined' && window.solana && window.solana.isPhantom) {
+        // Connect to Phantom wallet
+        const response = await window.solana.connect()
+        const address = response.publicKey.toString()
+        setWalletAddress(address)
+        setIsWalletConnected(true)
+        
+        // Simulate token balance check (in real implementation, this would query the blockchain)
+        const simulatedBalance = Math.floor(Math.random() * 10000000) + 1000000 // 1M to 11M
+        setTokenBalance(simulatedBalance)
+        
+        // Show verification popup
+        setShowVerificationPopup(true)
+        setTimeout(() => setShowVerificationPopup(false), 5000) // Hide after 5 seconds
+      } else {
+        // Fallback for when Phantom is not available
+        const mockAddress = '7xKXtg2CW87d97ZJZpuRqKZqK2N0EFfghEfqhXkH1Kf'
+        setWalletAddress(mockAddress)
+        setIsWalletConnected(true)
+        setTokenBalance(7500000)
+        setShowVerificationPopup(true)
+        setTimeout(() => setShowVerificationPopup(false), 5000)
+      }
+    } catch (error) {
+      console.error('Failed to connect wallet:', error)
+      alert('Failed to connect wallet. Please make sure Phantom wallet is installed.')
+    }
   }
 
   const handleMint = () => {
@@ -90,6 +118,12 @@ const MintSection = () => {
     }, 2000)
   }
 
+  const disconnectWallet = () => {
+    setIsWalletConnected(false)
+    setWalletAddress('')
+    setTokenBalance(0)
+  }
+
   return (
     <section
       id="mint"
@@ -100,6 +134,41 @@ const MintSection = () => {
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-bonk-gold/5"></div>
       </div>
+
+      {/* Verification Popup */}
+      {showVerificationPopup && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.8 }}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80"
+        >
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            className="glass-effect rounded-3xl p-8 max-w-md mx-4 border border-bonk-gold/30 relative"
+          >
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-bonk-gold to-yellow-400 rounded-full flex items-center justify-center mx-auto mb-6">
+                <AlertCircle className="text-black" size={32} />
+              </div>
+              <h3 className="text-2xl font-bold text-bonk-gold imperial-text mb-4">
+                Verification Notice
+              </h3>
+              <p className="text-white/90 leading-relaxed mb-6">
+                Token holder verification will begin in <span className="text-bonk-gold font-bold">2 hours</span>. 
+                Minting will be available after verification is complete.
+              </p>
+              <button
+                onClick={() => setShowVerificationPopup(false)}
+                className="bg-gradient-to-r from-bonk-gold to-yellow-400 text-black font-bold py-3 px-6 rounded-lg hover:shadow-lg hover:shadow-bonk-gold/50 transition-all duration-300"
+              >
+                Understood
+              </button>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
@@ -158,7 +227,10 @@ const MintSection = () => {
                     </div>
                     
                     {isWalletConnected && (
-                      <div className="text-center md:text-left">
+                      <div className="text-center md:text-left space-y-2">
+                        <p className="text-white/80 text-sm">
+                          Address: {walletAddress.slice(0, 8)}...{walletAddress.slice(-8)}
+                        </p>
                         <p className="text-white/80 mb-2">Token Balance: {tokenBalance.toLocaleString()}</p>
                         <div className={`text-sm ${tokenBalance >= 5000000 ? 'text-green-400' : 'text-red-400'}`}>
                           {tokenBalance >= 5000000 ? '✓ Eligible to mint' : '✗ Need more tokens'}
@@ -174,20 +246,28 @@ const MintSection = () => {
                         onClick={handleConnectWallet}
                         className="w-full md:w-auto bg-gradient-to-r from-bonk-gold to-yellow-400 text-black font-bold py-4 px-8 rounded-lg hover:shadow-lg hover:shadow-bonk-gold/50 transition-all duration-300 imperial-text text-lg"
                       >
-                        Connect Wallet
+                        Connect Solana Wallet
                       </button>
                     ) : (
-                      <button
-                        onClick={handleMint}
-                        disabled={!isWalletConnected || tokenBalance < 5000000 || isMinting}
-                        className={`w-full md:w-auto font-bold py-4 px-8 rounded-lg transition-all duration-300 imperial-text text-lg ${
-                          isWalletConnected && tokenBalance >= 5000000 && !isMinting
-                            ? 'bg-gradient-to-r from-bonk-red to-red-600 text-white hover:shadow-lg hover:shadow-bonk-red/50'
-                            : 'bg-gray-600 text-gray-400 cursor-not-allowed'
-                        }`}
-                      >
-                        {isMinting ? 'Minting...' : 'Mint NFT (1 SOL)'}
-                      </button>
+                      <div className="space-y-3">
+                        <button
+                          onClick={handleMint}
+                          disabled={!isWalletConnected || tokenBalance < 5000000 || isMinting}
+                          className={`w-full md:w-auto font-bold py-4 px-8 rounded-lg transition-all duration-300 imperial-text text-lg ${
+                            isWalletConnected && tokenBalance >= 5000000 && !isMinting
+                              ? 'bg-gradient-to-r from-bonk-red to-red-600 text-white hover:shadow-lg hover:shadow-bonk-red/50'
+                              : 'bg-gray-600 text-gray-400 cursor-not-allowed'
+                          }`}
+                        >
+                          {isMinting ? 'Minting...' : 'Mint NFT (1 SOL)'}
+                        </button>
+                        <button
+                          onClick={disconnectWallet}
+                          className="w-full md:w-auto bg-gray-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-gray-700 transition-all duration-300 text-sm"
+                        >
+                          Disconnect Wallet
+                        </button>
+                      </div>
                     )}
                   </div>
                 </div>
